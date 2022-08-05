@@ -11,6 +11,9 @@ import { InicioComponent } from './components/inicio/inicio.component';
 import { NavComponent } from './components/nav/nav.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { LoginComponent } from './components/login/login.component';
+import { PerfilComponent } from './components/usuario/perfil/perfil.component';
+import { SidebarComponent } from './components/usuario/sidebar/sidebar.component';
+import { IndexProductoComponent } from './components/productos/index-producto/index-producto.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,10 @@ import { LoginComponent } from './components/login/login.component';
     InicioComponent,
     NavComponent,
     FooterComponent,
-    LoginComponent
+    LoginComponent,
+    PerfilComponent,
+    SidebarComponent,
+    IndexProductoComponent
   ],
   imports: [
     BrowserModule,

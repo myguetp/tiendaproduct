@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ClienteService } from '../../services/cliente.service';
+import { ClienteService } from 'src/app/services/cliente.service';
 
 @Component({
-  selector: 'app-nav',
-  templateUrl: './nav.component.html',
-  styleUrls: ['./nav.component.css']
+  selector: 'app-sidebar',
+  templateUrl: './sidebar.component.html',
+  styleUrls: ['./sidebar.component.css']
 })
-export class NavComponent implements OnInit {
+export class SidebarComponent implements OnInit {
 
   public token;
   public id: any;
@@ -15,15 +14,10 @@ export class NavComponent implements OnInit {
   public user_lc : any = {};
 
   constructor(
-    private _clienteService: ClienteService,
-    private _router: Router,
+    private _clienteService: ClienteService
   ) {
     this.token = localStorage.getItem('token');
     this.id = localStorage.getItem('_id');
-
-
-
-    console.log(this.user_lc);
 
     if(this.token){
       this._clienteService.obtener_cliente_guest(this.id,this.token).subscribe(
@@ -45,22 +39,9 @@ export class NavComponent implements OnInit {
       );
     }
 
-
   }
 
   ngOnInit(): void {
-  }
-
-
-  //cerrar sesion
-  logout(){
-
-    //refescar la pagina
-    window.location.reload();
-    //limpia el locastorage
-    localStorage.clear();
-    //redirige
-    this._router.navigate(['/']);
   }
 
 }

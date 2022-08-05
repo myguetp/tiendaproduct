@@ -71,7 +71,7 @@ export class LoginComponent implements OnInit {
         class: 'text-danger',
         position: 'topLeft',
         message: 'datos no validos'
-      })
+      });
     }
   }
 
